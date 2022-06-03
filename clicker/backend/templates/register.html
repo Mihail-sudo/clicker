@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+
+<h1>Registration</h1>
+{% if form.errors %} 
+    <p>{{ form.errors }}</p> 
+{% endif %}
+
+<form class="form" action="{% url 'register' %}" method='POST'> 
+    {% csrf_token %} 
+    
+    {% for field in form %}
+        <div class="row">
+            <div class="form-label mb-3">{{ field }}</div>
+        </div>
+    {% endfor %}
+    <input class="btn btn-light mb-3" type="submit"> 
+</form> 
+<a href="{% url 'login' %}">Already has an account?</a>
+
+{% endblock content %}
