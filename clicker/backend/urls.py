@@ -8,7 +8,7 @@ boosts = views.BoostViewSet.as_view({
 })
 
 lonely_boost = views.BoostViewSet.as_view({
-    'put': 'patrial_update'
+    'put': 'partial_update'
 })
 
 urlpatterns = [
@@ -19,4 +19,6 @@ urlpatterns = [
     path('boosts/', boosts, name='boosts'),
     path('boost/<int:pk>/', lonely_boost, name='boost'),
     path('call_click/', views.call_click, name='call_click'),
+    path('update_coins/', views.update_coins),
+    path('core/', views.get_core),
 ]
