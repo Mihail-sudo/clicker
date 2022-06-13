@@ -47,8 +47,8 @@ let Game = new GameSession() // Экземпляр класса GameSession.
 
 /** Функция обработки клика пользователя на какаши. */
 function call_click() {
-    const kakashiNode = document.getElementById('kakashi')
-    click_animation(kakashiNode, 50)
+    const click_button = document.getElementById('click_button')
+    click_animation(click_button, 50)
     Game.add_coins(Game.click_power)
 }
 
@@ -89,7 +89,7 @@ function add_boost(parent, boost) {
 /** Функция для анимации элемента, по которому происходит клик. */
 function click_animation(node, time_ms) {
     css_time = `.0${time_ms}s`
-    node.style.cssText = `transition: all ${css_time} linear; transform: scale(0.95); background-color: red;`
+    node.style.cssText = `transition: all ${css_time} linear; transform: scale(0.95);`
     setTimeout(function() {
         node.style.cssText = `transition: all ${css_time} linear; transform: scale(1);`
     }, time_ms)

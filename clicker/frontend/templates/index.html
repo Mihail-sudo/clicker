@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container ">
-        Click power: <span id="click_power">{{ core.click_power }}</span> 
-        Auto click power: <span id="auto_click_power">{{ core.auto_click_power }}</span> 
-        You'r level: <span id="core_level" class="indicator">{{ core.level }}</span>
-</div>
-
 <div class="container">
-    <button id="kakashi" onclick="call_click()">
-        Нажми меня
-    </button>
+    <div class="row m-3">
+        <button id="click_button" onclick="call_click()">
+            <img src="../static/res/felix.png">
+        </button>
+    </div>
     <div id='coins'>{{ core.coins }}</div> 
 </div>
 
